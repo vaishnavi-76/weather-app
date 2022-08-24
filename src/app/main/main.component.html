@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-3 mt-5 shadow-sm ">
+                <h3 class="card-header bg-primary text-black ">{{data['name']}}</h3>
+                <div class="card-footer">
+                <!---weatherdetailsofthecity-->
+                <div class="card-body" *ngIf="data">
+                    <p><span class="badge badge-primary text-black">country</span><span class="float-right" *ngIf="data">{{data['sys']['country']}}</span> </p>
+                    <p><span class="badge badge-primary text-black">pressure</span><span class="float-right">{{data['main']['pressure']}}</span> </p>
+                    <p><span class="badge badge-primary text-black">weather</span><span class="float-right">{{data['weather'][0]['description']}}</span> </p>
+                    <p><span class="badge badge-primary text-black">sunrise</span><span class="float-right">{{data['sys']['sunrise']}}</span> </p>
+                    <p><span class="badge badge-primary text-black">sunset</span><span class="float-right">{{data['sys']['sunset']}}</span> </p>
+                    <p><span class="badge badge-primary text-black">latitude</span><span class="float-right">{{data['coord']['lat']}}</span> </p>
+                    <p><span class="badge badge-primary text-black">longitude</span><span class="float-right">{{data['coord']['lon']}}</span> </p>
+                   
+                </div>
+                <!-- <input type="text" class="form-control"> -->
+                <div class="row">
+                    <div class="col-md-8"></div>
+                    <input type="text"[(ngModel)]="city_name" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-ouline-primary btn-block" (click)="getWeather()">Get Details</button>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
